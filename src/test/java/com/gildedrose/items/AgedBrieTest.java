@@ -32,7 +32,7 @@ public class AgedBrieTest {
         app.updateQuality();
         Item agedBrieItem = app.getShopItems().get(0).getItem();
         assertEquals("Aged Brie", agedBrieItem.name);
-        assertEquals(0, agedBrieItem.sellIn);
+        assertEquals(1, agedBrieItem.sellIn);
         assertEquals(50, agedBrieItem.quality);
     }
 

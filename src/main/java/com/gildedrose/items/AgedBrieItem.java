@@ -20,7 +20,19 @@ public class AgedBrieItem extends Item implements ShopItem, QualityCheck {
 
     @Override
     public void updateItem() {
+        updateSellin();
+        if(atMaximumQuality()){
+            return;
+        }
+        improve();
+    }
 
+    private void improve(){
+        quality++;
+    }
+
+    private void updateSellin(){
+        sellIn--;
     }
 
     @Override
