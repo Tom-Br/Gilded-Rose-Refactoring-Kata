@@ -20,7 +20,7 @@ public class LegendaryItem extends Item implements ShopItem, QualityCheck {
 
     @Override
     public void updateItem() {
-
+        updateSellin();
     }
 
     @Override
@@ -30,11 +30,16 @@ public class LegendaryItem extends Item implements ShopItem, QualityCheck {
 
     @Override
     public boolean atMinimumQuality() {
-        return false;
+        return getQuality() == QUALITY_LEVEL.getMin();
     }
 
     @Override
     public boolean atMaximumQuality() {
-        return false;
+        return getQuality() == QUALITY_LEVEL.getMax();
     }
+
+    private void updateSellin() {
+        sellIn--;
+    }
+
 }

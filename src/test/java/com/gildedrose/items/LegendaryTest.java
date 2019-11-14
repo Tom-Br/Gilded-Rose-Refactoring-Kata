@@ -19,12 +19,14 @@ public class LegendaryTest {
         GildedRose app = new GildedRose(shopItems);
         app.updateQuality();
         Item sulfuras = app.getShopItems().get(0).getItem();
-        app.updateQuality();
         assertEquals("Sulfuras, Hand of Ragnaros", sulfuras.name);
-        assertEquals(0, sulfuras.sellIn);
+        assertEquals(-1, sulfuras.sellIn);
         assertEquals(80, sulfuras.quality);
         app.updateQuality();
-        assertEquals(0, sulfuras.sellIn);
+        assertEquals(-2, sulfuras.sellIn);
+        assertEquals(80, sulfuras.quality);
+        app.updateQuality();
+        assertEquals(-3, sulfuras.sellIn);
         assertEquals(80, sulfuras.quality);
     }
 
