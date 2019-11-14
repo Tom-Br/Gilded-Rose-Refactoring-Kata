@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+//Should be made abstract but can't change due to constraints.
 public class Item {
 
     public String name;
