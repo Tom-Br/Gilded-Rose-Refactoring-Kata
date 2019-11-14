@@ -33,7 +33,7 @@ public class ConjuredItemTest {
         Item conjured = app.getShopItems().get(0).getItem();
         assertEquals("Conjured Mana Cake", conjured.name);
         assertEquals(-1, conjured.sellIn);
-        assertEquals(0, conjured.quality);
+        assertEquals(4, conjured.quality);
     }
 
 }
