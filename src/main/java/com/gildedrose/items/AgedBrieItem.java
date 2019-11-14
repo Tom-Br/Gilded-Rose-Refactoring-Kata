@@ -14,6 +14,11 @@ public class AgedBrieItem extends Item implements ShopItem, QualityCheck {
     }
 
     @Override
+    public AgedBrieItem getItem() {
+        return this;
+    }
+
+    @Override
     public void updateItem() {
 
     }

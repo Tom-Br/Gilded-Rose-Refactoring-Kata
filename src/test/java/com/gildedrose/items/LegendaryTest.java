@@ -2,7 +2,11 @@ package com.gildedrose.items;
 
 import com.gildedrose.GildedRose;
 import com.gildedrose.Item;
+import com.gildedrose.shop.ShopItem;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,15 +14,18 @@ public class LegendaryTest {
 
     @Test
     public void testSulfurasNeverDegrading(){
-        Item[] items = new Item[] {  new Item("Sulfuras, Hand of Ragnaros", 0, 80) };
-        GildedRose app = new GildedRose(items);
+        List<ShopItem> shopItems = new ArrayList<>();
+        shopItems.add(new LegendaryItem("Sulfuras, Hand of Ragnaros", 0, 80) );
+        GildedRose app = new GildedRose(shopItems);
         app.updateQuality();
-        assertEquals("Sulfuras, Hand of Ragnaros", app.getShopItems()[0].name);
-        assertEquals(0, app.getShopItems()[0].sellIn);
-        assertEquals(80, app.getShopItems()[0].quality);
+        Item sulfuras = app.getShopItems().get(0).getItem();
         app.updateQuality();
-        assertEquals(0, app.getShopItems()[0].sellIn);
-        assertEquals(80, app.getShopItems()[0].quality);
+        assertEquals("Sulfuras, Hand of Ragnaros", sulfuras.name);
+        assertEquals(0, sulfuras.sellIn);
+        assertEquals(80, sulfuras.quality);
+        app.updateQuality();
+        assertEquals(0, sulfuras.sellIn);
+        assertEquals(80, sulfuras.quality);
     }
 
 }

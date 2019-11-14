@@ -14,6 +14,11 @@ public class RegularItem extends Item implements ShopItem, QualityCheck {
     }
 
     @Override
+    public Item getItem() {
+        return this;
+    }
+
+    @Override
     public void updateItem() {
 
     }

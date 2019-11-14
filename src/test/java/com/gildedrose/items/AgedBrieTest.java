@@ -2,7 +2,11 @@ package com.gildedrose.items;
 
 import com.gildedrose.GildedRose;
 import com.gildedrose.Item;
+import com.gildedrose.shop.ShopItem;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,23 +14,26 @@ public class AgedBrieTest {
 
     @Test
     public void testAgedBrieIncreasinInQuality(){
-        Item[] items = new Item[] { new Item("Aged Brie", 2, 0) };
-        GildedRose app = new GildedRose(items);
+        List<ShopItem> shopItems = new ArrayList<>();
+        shopItems.add(new AgedBrieItem("Aged Brie", 2, 0));
+        GildedRose app = new GildedRose(shopItems);
         app.updateQuality();
-        assertEquals("Aged Brie", app.getShopItems()[0].name);
-        assertEquals(1, app.getShopItems()[0].sellIn);
-        assertEquals(1, app.getShopItems()[0].quality);
+        Item agedBrieItem = app.getShopItems().get(0).getItem();
+        assertEquals("Aged Brie", agedBrieItem.name);
+        assertEquals(1, agedBrieItem.sellIn);
+        assertEquals(1, agedBrieItem.quality);
     }
 
     @Test
     public void testAgedBrieNeverPassing50(){
-        Item[] items = new Item[] { new Item("Aged Brie", 2, 49) };
-        GildedRose app = new GildedRose(items);
+        List<ShopItem> shopItems = new ArrayList<>();
+        shopItems.add(new AgedBrieItem("Aged Brie", 2, 49) );
+        GildedRose app = new GildedRose(shopItems);
         app.updateQuality();
-        app.updateQuality();
-        assertEquals("Aged Brie", app.getShopItems()[0].name);
-        assertEquals(0, app.getShopItems()[0].sellIn);
-        assertEquals(50, app.getShopItems()[0].quality);
+        Item agedBrieItem = app.getShopItems().get(0).getItem();
+        assertEquals("Aged Brie", agedBrieItem.name);
+        assertEquals(0, agedBrieItem.sellIn);
+        assertEquals(50, agedBrieItem.quality);
     }
 
 }
