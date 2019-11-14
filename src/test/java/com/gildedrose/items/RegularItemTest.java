@@ -51,7 +51,7 @@ public class RegularItemTest {
     @Test
     public void testDexterityVestDegradingTwiceAsFastAfterSellin(){
         List<ShopItem> shopItems = new ArrayList<>();
-        shopItems.add(new RegularItem("+5 Dexterity Vest", 10, 20));
+        shopItems.add(new RegularItem("+5 Dexterity Vest", 0, 20));
         GildedRose app = new GildedRose(shopItems);
         app.updateQuality();
         Item dexterityVest = app.getShopItems().get(0).getItem();
