@@ -13,9 +13,9 @@ public class BackStagePassesTest {
         Item[] items = new Item[] {  new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getItems()[0].name);
-        assertEquals(14, app.getItems()[0].sellIn);
-        assertEquals(21, app.getItems()[0].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getShopItems()[0].name);
+        assertEquals(14, app.getShopItems()[0].sellIn);
+        assertEquals(21, app.getShopItems()[0].quality);
     }
 
     @Test
@@ -23,9 +23,9 @@ public class BackStagePassesTest {
         Item[] items = new Item[] {  new Item("Backstage passes to a TAFKAL80ETC concert", 9, 45) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getItems()[0].name);
-        assertEquals(8, app.getItems()[0].sellIn);
-        assertEquals(47, app.getItems()[0].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getShopItems()[0].name);
+        assertEquals(8, app.getShopItems()[0].sellIn);
+        assertEquals(47, app.getShopItems()[0].quality);
     }
 
     @Test
@@ -33,9 +33,9 @@ public class BackStagePassesTest {
         Item[] items = new Item[] {  new Item("Backstage passes to a TAFKAL80ETC concert", 5, 33) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getItems()[0].name);
-        assertEquals(4, app.getItems()[0].sellIn);
-        assertEquals(36, app.getItems()[0].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getShopItems()[0].name);
+        assertEquals(4, app.getShopItems()[0].sellIn);
+        assertEquals(36, app.getShopItems()[0].quality);
     }
 
     @Test
@@ -43,9 +43,9 @@ public class BackStagePassesTest {
         Item[] items = new Item[] {  new Item("Backstage passes to a TAFKAL80ETC concert", 0, 34) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getItems()[0].name);
-        assertEquals(-1, app.getItems()[0].sellIn);
-        assertEquals(0, app.getItems()[0].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.getShopItems()[0].name);
+        assertEquals(-1, app.getShopItems()[0].sellIn);
+        assertEquals(0, app.getShopItems()[0].quality);
     }
 
     @Test
@@ -57,9 +57,9 @@ public class BackStagePassesTest {
         };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(50, app.getItems()[0].quality);
-        assertEquals(50, app.getItems()[1].quality);
-        assertEquals(50, app.getItems()[2].quality);
+        assertEquals(50, app.getShopItems()[0].quality);
+        assertEquals(50, app.getShopItems()[1].quality);
+        assertEquals(50, app.getShopItems()[2].quality);
     }
 
 }
